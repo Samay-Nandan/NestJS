@@ -10,8 +10,8 @@ export const TypeOrmConfig: DataSourceOptions = {
   username: POSTGRES_USER,
   password: POSTGRES_PASSWORD,
   database: POSTGRES_DATABASE,
-  entities: ['dist/**/*.entity.{js,ts}'],
-  migrations: ['migrations/*.{js,ts}'],
+  entities: ['dist/**/*.entity.js'],
+  migrations: ['dist/migrations/*.js'],
 };
 
 export default new DataSource(TypeOrmConfig);
