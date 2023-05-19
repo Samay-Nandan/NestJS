@@ -10,3 +10,8 @@
 2. ALTER USER postgres PASSWORD 'admin@1234';
 3. CREATE DATABASE typeorm_with_nestjs;
 4. sudo service postgresql restart
+
+## Typeorm
+
+For Migration: yarn typeorm:migration:generate migrations/migrationName
+               yarn typeorm:migration:run
