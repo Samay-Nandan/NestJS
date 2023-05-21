@@ -4,9 +4,9 @@ import {
   ArgumentsHost,
   HttpException,
   HttpStatus,
+  Logger,
 } from '@nestjs/common';
-import { QueryFailedError } from 'typeorm';
-import { PORT, GetEnvironment } from '@src/environment';
+import { PORT } from '@src/environment';
 
 @Catch()
 export class GlobalExceptionFilter implements ExceptionFilter {
@@ -31,10 +31,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
       timestamp: new Date().toISOString(),
     };
 
-    if (exception instanceof QueryFailedError && GetEnvironment)
-      return response
-        .status(statusCode)
-        .json({ data: { ...data, query: exception.query } });
+    Logger.error(`${method} ${url}, Error: ${message}`, 'HTTP');
 
     response.status(statusCode).json({ data });
   }
