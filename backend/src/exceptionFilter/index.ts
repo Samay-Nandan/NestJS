@@ -5,7 +5,8 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
-import { PORT } from '@src/environment';
+import { QueryFailedError } from 'typeorm';
+import { PORT, GetEnvironment } from '@src/environment';
 
 @Catch()
 export class GlobalExceptionFilter implements ExceptionFilter {
@@ -29,6 +30,11 @@ export class GlobalExceptionFilter implements ExceptionFilter {
       message,
       timestamp: new Date().toISOString(),
     };
+
+    if (exception instanceof QueryFailedError && GetEnvironment)
+      return response
+        .status(statusCode)
+        .json({ data: { ...data, query: exception.query } });
 
     response.status(statusCode).json({ data });
   }
