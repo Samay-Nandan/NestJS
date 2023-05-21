@@ -12,6 +12,7 @@ export const TypeOrmConfig: DataSourceOptions = {
   database: POSTGRES_DATABASE,
   entities: ['dist/**/*.entity.js'],
   migrations: ['dist/migrations/*.js'],
+  synchronize: false,
 };
 
 export default new DataSource(TypeOrmConfig);
