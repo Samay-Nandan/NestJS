@@ -5,11 +5,19 @@ import {
   HttpException,
   HttpStatus,
   Logger,
+  BadRequestException,
 } from '@nestjs/common';
 import { PORT } from '@src/environment';
+import { IBadRequestException } from './dto';
 
 @Catch()
 export class GlobalExceptionFilter implements ExceptionFilter {
+  getErrorMessage = (exception: any) => {
+    if (exception instanceof BadRequestException)
+      return (exception.getResponse() as IBadRequestException).message;
+
+    return exception.message || 'Internal server error';
+  };
   catch(exception: any, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();
@@ -20,7 +28,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
         ? exception.getStatus()
         : HttpStatus.INTERNAL_SERVER_ERROR;
 
-    const message = exception.message || 'Internal server error';
+    const message = this.getErrorMessage(exception);
 
     const data = {
       status: false,
