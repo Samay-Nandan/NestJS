@@ -1,4 +1,18 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateProductDto } from './create-product.dto';
+import { IsString, IsNotEmpty, IsNumber } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+export class UpdateProductDto {
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty({ required: false })
+  readonly name?: string;
 
-export class UpdateProductDto extends PartialType(CreateProductDto) {}
+  @IsNumber()
+  @IsNotEmpty()
+  @ApiProperty({ required: false })
+  readonly price?: number;
+
+  @IsNumber()
+  @IsNotEmpty()
+  @ApiProperty({ required: false })
+  readonly quantity?: number;
+}
