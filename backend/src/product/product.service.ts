@@ -21,7 +21,7 @@ export class ProductService {
   }
 
   async findOne(id: string) {
-    return await this.productRepository.findOne({ where: { id } });
+    return await this.productRepository.findOneBy({ id });
   }
 
   async update(id: string, updateProductDto: UpdateProductDto) {
@@ -34,6 +34,7 @@ export class ProductService {
   }
 
   async remove(id: string) {
-    return await this.productRepository.delete({ id });
+    await this.productRepository.delete({ id });
+    return `Product ${id} deleted Successfully`;
   }
 }
