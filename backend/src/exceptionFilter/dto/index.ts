@@ -1,1 +1,1 @@
-export * from './BadRequestException.dto';
+export * from './bad-request-exception.dto';

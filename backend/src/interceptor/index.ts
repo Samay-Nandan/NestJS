@@ -7,10 +7,14 @@ import {
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PORT } from '@src/environment';
+import { IResponse } from './dto';
 
 @Injectable()
 export class GlobalInterceptor implements NestInterceptor {
-  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+  intercept(
+    context: ExecutionContext,
+    next: CallHandler,
+  ): Observable<IResponse> {
     const ctx = context.switchToHttp();
     const request = ctx.getRequest();
     const { url, method } = request;
