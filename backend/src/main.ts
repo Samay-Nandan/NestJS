@@ -4,6 +4,7 @@ import { AppModule } from '@src/app.module';
 import { PORT } from '@src/environment';
 import { GlobalExceptionFilter } from '@src/exceptionFilter';
 import { SetupSwagger } from '@src/swagger';
+import { GlobalInterceptor } from '@src/interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -11,6 +12,7 @@ async function bootstrap() {
   app.useLogger(new Logger(undefined, { timestamp: true }));
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalFilters(new GlobalExceptionFilter());
+  app.useGlobalInterceptors(new GlobalInterceptor());
   SetupSwagger(app);
   await app.listen(PORT);
   Logger.log(
