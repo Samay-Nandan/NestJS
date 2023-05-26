@@ -41,6 +41,6 @@ export class GlobalExceptionFilter implements ExceptionFilter {
 
     Logger.error(`${method} ${url}, Error: ${message}`, 'HTTP');
 
-    response.status(statusCode).json({ data });
+    response.status(statusCode).json(data);
   }
 }

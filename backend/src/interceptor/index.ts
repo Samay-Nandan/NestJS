@@ -28,7 +28,7 @@ export class GlobalInterceptor implements NestInterceptor {
           timestamp: new Date().toISOString(),
           result,
         };
-        return { data: payload };
+        return payload;
       }),
     );
   }
