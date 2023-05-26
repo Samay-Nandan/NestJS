@@ -1,8 +1,8 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from "axios";
 import { IRequest, RequestMethod } from "./dto";
-import { REACT_APP_BACKEND_URL } from "@src/environment";
+import { VITE_BACKEND_URL } from "@src/environment";
 
-axios.defaults.baseURL = REACT_APP_BACKEND_URL;
+axios.defaults.baseURL = VITE_BACKEND_URL;
 
 export const HttpRequest = async (request: IRequest): Promise<unknown> => {
   try {

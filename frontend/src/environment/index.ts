@@ -1,1 +1,1 @@
-export const { REACT_APP_BACKEND_URL } = process.env;
+export const { VITE_BACKEND_URL } = import.meta.env;
