@@ -1,10 +1,10 @@
 import { AxiosHeaders } from "axios";
 
 export enum RequestMethod {
-  GET,
-  POST,
-  PATCH,
-  DELETE,
+  GET = "GET",
+  POST = "POST",
+  PATCH = "PATCH",
+  DELETE = "DELETE",
 }
 
 export interface IRequest {
