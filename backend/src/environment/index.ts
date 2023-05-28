@@ -1,5 +1,5 @@
-import { config } from 'dotenv';
 import { DataSource, DataSourceOptions } from 'typeorm';
+import { config } from 'dotenv';
 config();
 
 export const { PORT, POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DATABASE } =
