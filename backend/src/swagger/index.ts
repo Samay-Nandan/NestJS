@@ -1,7 +1,9 @@
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { INestApplication } from '@nestjs/common';
+import { readFile, copyFile } from 'fs/promises';
+import { join } from 'path';
 
-export function SetupSwagger(app: INestApplication): void {
+export async function SetupSwagger(app: INestApplication): Promise<void> {
   const options = new DocumentBuilder()
     .setTitle('Product Selling API')
     .setDescription(
@@ -10,6 +12,11 @@ export function SetupSwagger(app: INestApplication): void {
     .setVersion('1.0')
     .build();
 
+  const distSwaggerPath = join(process.cwd(), 'dist/src/swagger/index.css');
+  const mainSwaggerPath = join(process.cwd(), 'src/swagger/index.css');
+  await copyFile(mainSwaggerPath, distSwaggerPath);
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('swagger', app, document);
+  SwaggerModule.setup('swagger', app, document, {
+    customCss: await readFile(distSwaggerPath, 'utf-8'),
+  });
 }

@@ -13,7 +13,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalFilters(new GlobalExceptionFilter());
   app.useGlobalInterceptors(new GlobalInterceptor());
-  SetupSwagger(app);
+  await SetupSwagger(app);
   await app.listen(PORT);
   Logger.log(
     `Application Running on http://localhost:${PORT}`,
