@@ -1,11 +1,16 @@
 import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { TypeOrmConfig } from '@src/environment';
+import { JwtModule } from '@nestjs/jwt';
+import { JwtConfig, TypeOrmConfig } from '@src/environment';
 import { ProductModule } from '@src/product/product.module';
 import { RoutesMiddleware } from '@src/middleware';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(TypeOrmConfig), ProductModule],
+  imports: [
+    TypeOrmModule.forRoot(TypeOrmConfig),
+    JwtModule.register(JwtConfig),
+    ProductModule,
+  ],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {

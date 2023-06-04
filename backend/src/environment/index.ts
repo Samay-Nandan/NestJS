@@ -2,8 +2,13 @@ import { DataSource, DataSourceOptions } from 'typeorm';
 import { config } from 'dotenv';
 config();
 
-export const { PORT, POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DATABASE } =
-  process.env;
+export const {
+  PORT,
+  POSTGRES_USER,
+  POSTGRES_PASSWORD,
+  POSTGRES_DATABASE,
+  JWT_SECRET,
+} = process.env;
 
 export const TypeOrmConfig: DataSourceOptions = {
   type: 'postgres',
@@ -13,6 +18,12 @@ export const TypeOrmConfig: DataSourceOptions = {
   entities: ['dist/**/*.entity.js'],
   migrations: ['dist/migrations/*.js'],
   synchronize: false,
+};
+
+export const JwtConfig = {
+  global: true,
+  secret: JWT_SECRET,
+  signOptions: { expiresIn: '1h' },
 };
 
 export default new DataSource(TypeOrmConfig);
