@@ -9,6 +9,7 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { Public } from '@src/middleware';
 import { ProductService } from './product.service';
 import { CreateProductDto, UpdateProductDto } from './dto';
 
@@ -28,6 +29,7 @@ export class ProductController {
   }
 
   @Get()
+  @Public()
   @ApiOperation({ summary: 'Get all products' })
   @ApiResponse({
     status: HttpStatus.OK,
@@ -38,6 +40,7 @@ export class ProductController {
   }
 
   @Get(':id')
+  @Public()
   @ApiOperation({ summary: 'Get product by id' })
   @ApiResponse({ status: HttpStatus.OK, description: 'Returns product by id' })
   findOne(@Param('id') id: string) {
