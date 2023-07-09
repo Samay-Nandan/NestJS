@@ -1,1 +1,1 @@
-export * from '../product/dto';
+export * from '@src/httpApi/product/dto';

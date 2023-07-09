@@ -3,7 +3,7 @@ import {
   POSTGRES_USER,
   POSTGRES_PASSWORD,
   POSTGRES_DATABASE,
-} from '../enivronment';
+} from '@src/config';
 
 export const TypeOrmConfig: DataSourceOptions = {
   type: 'postgres',

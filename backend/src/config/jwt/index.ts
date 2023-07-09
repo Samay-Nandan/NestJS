@@ -1,5 +1,5 @@
 import { JwtModuleOptions } from '@nestjs/jwt';
-import { JWT_SECRET } from '../enivronment';
+import { JWT_SECRET } from '@src/config';
 
 export const JwtConfig: JwtModuleOptions = {
   global: true,
