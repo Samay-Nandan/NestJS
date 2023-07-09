@@ -13,5 +13,5 @@
 
 ## Typeorm
 
-For Migration: yarn typeorm:migration:generate migrations/migrationName
+For Migration: yarn typeorm:migration:generate src/migrations/migrationName
                yarn typeorm:migration:run

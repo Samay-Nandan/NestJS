@@ -10,7 +10,7 @@ export const TypeOrmConfig: DataSourceOptions = {
   username: POSTGRES_USER,
   password: POSTGRES_PASSWORD,
   database: POSTGRES_DATABASE,
-  entities: ['dist/src/httpApi/**/entity/*.js'],
+  entities: ['dist/httpApi/**/entity/*.js'],
   migrations: ['dist/migrations/*.js'],
   synchronize: false,
 };

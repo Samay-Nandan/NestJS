@@ -12,9 +12,8 @@ export async function SetupSwagger(app: INestApplication): Promise<void> {
     .setVersion('1.0')
     .build();
 
-  const swaggercssPath = 'src/swagger/index.css';
-  const distSwaggerPath = join(process.cwd(), `dist/${swaggercssPath}`);
-  const mainSwaggerPath = join(process.cwd(), swaggercssPath);
+  const distSwaggerPath = join(process.cwd(), `dist/swagger/index.css`);
+  const mainSwaggerPath = join(process.cwd(), `src/swagger/index.css`);
   await copyFile(mainSwaggerPath, distSwaggerPath);
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('swagger', app, document, {
