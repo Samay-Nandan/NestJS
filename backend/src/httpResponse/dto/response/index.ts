@@ -6,5 +6,5 @@ export class IResponse {
   url: string;
   method: string;
   timestamp: string;
-  result: Array<IResult> | object;
+  result: Array<IResult> | object | string;
 }

@@ -3,9 +3,9 @@ import { Logger, ValidationPipe } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { AppModule } from '@src/app.module';
 import { APP_URL, PORT } from '@src/config';
-import { GlobalExceptionFilter } from '@src/exceptionFilter';
+import { HttpExceptionFilter } from '@src/httpException';
 import { SetupSwagger } from '@src/swagger';
-import { GlobalInterceptor } from '@src/interceptor';
+import { HTTPResponseInterceptor } from '@src/httpResponse';
 import { AuthGuard } from '@src/middleware';
 
 async function bootstrap() {
@@ -13,8 +13,8 @@ async function bootstrap() {
   app.enableCors();
   app.useLogger(new Logger(undefined, { timestamp: true }));
   app.useGlobalPipes(new ValidationPipe());
-  app.useGlobalFilters(new GlobalExceptionFilter());
-  app.useGlobalInterceptors(new GlobalInterceptor());
+  app.useGlobalFilters(new HttpExceptionFilter());
+  app.useGlobalInterceptors(new HTTPResponseInterceptor());
   app.useGlobalGuards(new AuthGuard(new JwtService(), new Reflector()));
   await SetupSwagger(app);
   await app.listen(PORT);

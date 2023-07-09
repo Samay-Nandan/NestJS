@@ -2,7 +2,7 @@ import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtConfig, TypeOrmConfig } from '@src/config';
-import { ProductModule } from '@src/product/product.module';
+import { ProductModule } from '@src/httpApi/modules';
 import { RoutesMiddleware } from '@src/middleware';
 
 @Module({

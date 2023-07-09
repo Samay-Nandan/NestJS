@@ -10,7 +10,7 @@ import { APP_URL } from '@src/config';
 import { IResponse } from './dto';
 
 @Injectable()
-export class GlobalInterceptor implements NestInterceptor {
+export class HTTPResponseInterceptor implements NestInterceptor {
   intercept(
     context: ExecutionContext,
     next: CallHandler,

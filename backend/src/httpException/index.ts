@@ -8,13 +8,13 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { APP_URL } from '@src/config';
-import { IBadRequestException } from './dto';
+import { IBadRequest } from './dto';
 
 @Catch()
-export class GlobalExceptionFilter implements ExceptionFilter {
+export class HttpExceptionFilter implements ExceptionFilter {
   getErrorMessage = (exception: any) => {
     if (exception instanceof BadRequestException)
-      return (exception.getResponse() as IBadRequestException).message;
+      return (exception.getResponse() as IBadRequest).message;
 
     return exception.message || 'Internal server error';
   };
