@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { PORT } from '@src/environment';
+import { APP_URL } from '@src/config';
 import { IResponse } from './dto';
 
 @Injectable()
@@ -23,7 +23,7 @@ export class GlobalInterceptor implements NestInterceptor {
       map((result) => {
         const payload = {
           status: true,
-          url: `http://localhost:${PORT}${url}`,
+          url: `${APP_URL}${url}`,
           method,
           timestamp: new Date().toISOString(),
           result,

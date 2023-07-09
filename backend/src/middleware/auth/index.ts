@@ -8,7 +8,7 @@ import { JwtService } from '@nestjs/jwt';
 import { Reflector } from '@nestjs/core';
 import { SetMetadata } from '@nestjs/common';
 import { Request } from 'express';
-import { JwtConfig } from '@src/environment';
+import { JwtConfig } from '@src/config';
 
 export const Public = () => SetMetadata('isPublic', true);
 @Injectable()

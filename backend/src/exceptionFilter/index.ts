@@ -7,7 +7,7 @@ import {
   Logger,
   BadRequestException,
 } from '@nestjs/common';
-import { PORT } from '@src/environment';
+import { APP_URL } from '@src/config';
 import { IBadRequestException } from './dto';
 
 @Catch()
@@ -32,7 +32,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
 
     const data = {
       status: false,
-      url: `http://localhost:${PORT}${url}`,
+      url: `${APP_URL}${url}`,
       method,
       body,
       message,

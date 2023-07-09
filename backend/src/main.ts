@@ -2,7 +2,7 @@ import { NestFactory, Reflector } from '@nestjs/core';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { AppModule } from '@src/app.module';
-import { PORT } from '@src/environment';
+import { APP_URL, PORT } from '@src/config';
 import { GlobalExceptionFilter } from '@src/exceptionFilter';
 import { SetupSwagger } from '@src/swagger';
 import { GlobalInterceptor } from '@src/interceptor';
@@ -18,13 +18,7 @@ async function bootstrap() {
   app.useGlobalGuards(new AuthGuard(new JwtService(), new Reflector()));
   await SetupSwagger(app);
   await app.listen(PORT);
-  Logger.log(
-    `Application Running on http://localhost:${PORT}`,
-    'NestApplication',
-  );
-  Logger.log(
-    `Swagger Running on http://localhost:${PORT}/swagger`,
-    'NestApplication',
-  );
+  Logger.log(`Application Running on ${APP_URL}`, 'NestApplication');
+  Logger.log(`Swagger Running on ${APP_URL}swagger`, 'NestApplication');
 }
 bootstrap();
