@@ -19,6 +19,6 @@ async function bootstrap() {
   await SetupSwagger(app);
   await app.listen(PORT);
   Logger.log(`Application Running on ${APP_URL}`, 'NestApplication');
-  Logger.log(`Swagger Running on ${APP_URL}swagger`, 'NestApplication');
+  Logger.log(`Swagger Running on ${APP_URL}/swagger`, 'NestApplication');
 }
 bootstrap();
