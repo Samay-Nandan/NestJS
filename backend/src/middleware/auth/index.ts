@@ -13,7 +13,7 @@ import { JwtConfig } from '@src/config';
 export const Public = () => SetMetadata('isPublic', true);
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private jwtService: JwtService) {}
+  private jwtService = new JwtService();
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest();
