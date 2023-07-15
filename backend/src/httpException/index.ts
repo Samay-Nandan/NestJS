@@ -12,7 +12,7 @@ import { IBadRequest } from './dto';
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
-  getErrorMessage = (exception: any) => {
+  private getErrorMessage = (exception: any) => {
     if (exception instanceof BadRequestException)
       return (exception.getResponse() as IBadRequest).message;
 
