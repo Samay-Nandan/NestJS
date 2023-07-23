@@ -1,8 +1,8 @@
 {
   "name": "backend",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "nestjs",
+  "author": "Samay Nandan",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

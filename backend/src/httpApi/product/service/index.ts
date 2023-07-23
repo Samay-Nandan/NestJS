@@ -1,7 +1,11 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateProductDto, UpdateProductDto } from '@src/httpApi/dtos';
+import {
+  CreateProductDto,
+  PaginationProductDto,
+  UpdateProductDto,
+} from '@src/httpApi/dtos';
 import { ProductEntity } from '@src/httpApi/entities';
 
 @Injectable()
@@ -17,8 +21,12 @@ export class ProductService {
     );
   }
 
-  async findAll() {
-    return await this.productRepository.find();
+  async findAll(paginationProductDto: PaginationProductDto) {
+    const { page = 1, limit = 10 } = paginationProductDto;
+    return this.productRepository.find({
+      skip: (page - 1) * limit,
+      take: limit,
+    });
   }
 
   async findOne(id: string) {

@@ -7,11 +7,16 @@ import {
   Param,
   Delete,
   HttpStatus,
+  Query,
 } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Public } from '@src/middleware';
 import { ProductService } from '@src/httpApi/services';
-import { CreateProductDto, UpdateProductDto } from '@src/httpApi/dtos';
+import {
+  CreateProductDto,
+  PaginationProductDto,
+  UpdateProductDto,
+} from '@src/httpApi/dtos';
 
 @ApiTags('Product')
 @Controller('product')
@@ -35,8 +40,8 @@ export class ProductController {
     status: HttpStatus.OK,
     description: 'Returns all the products',
   })
-  findAll() {
-    return this.productService.findAll();
+  findAll(@Query() paginationProductDto: PaginationProductDto) {
+    return this.productService.findAll(paginationProductDto);
   }
 
   @Get(':id')
