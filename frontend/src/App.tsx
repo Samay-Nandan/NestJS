@@ -1,5 +1,11 @@
+import { Layout, Navbar } from '@src/components';
+
 const App = () => {
-  return <>React</>;
+  return (
+    <Layout>
+      <Navbar />
+    </Layout>
+  );
 };
 
 export default App;
