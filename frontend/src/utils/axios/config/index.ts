@@ -1,6 +1,6 @@
-import axios, { AxiosResponse, AxiosRequestConfig } from "axios";
-import { IRequest, RequestMethod } from "@src/utils";
-import { VITE_BACKEND_URL } from "@src/environment";
+import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
+import { IRequest, RequestMethod } from '@src/utils';
+import { VITE_BACKEND_URL } from '@src/environment';
 
 axios.defaults.baseURL = VITE_BACKEND_URL;
 

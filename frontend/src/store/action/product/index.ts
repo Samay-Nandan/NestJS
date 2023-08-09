@@ -1,12 +1,12 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { HttpRequest, Product, RequestMethod } from "@src/utils";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { HttpRequest, Product, RequestMethod } from '@src/utils';
 import {
   FETCH_ALL_PRODUCTS,
   FETCH_PRODUCT_BY_ID,
   UPDATE_PRODUCT_BY_ID,
   DELETE_PRODUCT_BY_ID,
   CREATE_PRODUCT_BY_ID,
-} from "@src/store/types";
+} from '@src/store/types';
 
 export const FetchAllProduct = createAsyncThunk(FETCH_ALL_PRODUCTS, () => {
   return HttpRequest({ url: Product, method: RequestMethod.GET });
