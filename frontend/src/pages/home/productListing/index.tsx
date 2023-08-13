@@ -8,16 +8,16 @@ import { ProductDto } from '@src/store/dto';
 export const ProductListing = () => {
   const dispatch = useAppDispatch();
   const { loading, error, products } = useAppSelector(
-    (state) => state.ProductReducer
+    ({ ProductReducer }) => ProductReducer
   );
 
   useEffect(() => {
     dispatch(FetchAllProduct());
   }, [dispatch]);
 
-  if (loading) return <Loader />;
-
   if (error) toast.error(error, { toastId: error });
+
+  if (loading) return <Loader />;
 
   return (
     <div className="p-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
