@@ -1,1 +1,1 @@
-export * from '@src/pages/home';
+export * from './home';

@@ -26,7 +26,8 @@ export const HttpRequest = async (request: IRequest): Promise<unknown> => {
     const response: AxiosResponse = await requestMethod(url, body, config);
     return response.data.result;
   } catch (error: unknown) {
-    if (axios.isAxiosError(error) && error.response) return error.response.data;
+    if (axios.isAxiosError(error) && error.response)
+      return error.response.data.message;
     return error;
   }
 };

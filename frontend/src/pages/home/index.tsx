@@ -1,1 +1,3 @@
-export const Home = () => <div>Home</div>;
+import { ProductListing } from '@src/pages/home/productListing';
+
+export const Home = () => <ProductListing />;

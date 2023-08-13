@@ -1,1 +1,1 @@
-export * from '@src/utils/axios/dto/request';
+export * from './request';

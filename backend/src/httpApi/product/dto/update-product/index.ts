@@ -1,4 +1,10 @@
-import { IsString, IsNotEmpty, IsNumber, ValidateIf } from 'class-validator';
+import {
+  IsString,
+  IsNotEmpty,
+  IsNumber,
+  ValidateIf,
+  IsUrl,
+} from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 export class UpdateProductDto {
   @ValidateIf((object, value) => value !== undefined)
@@ -18,4 +24,10 @@ export class UpdateProductDto {
   @IsNotEmpty()
   @ApiProperty({ required: false })
   readonly quantity?: number;
+
+  @ValidateIf((object, value) => value !== undefined)
+  @IsUrl()
+  @IsNotEmpty()
+  @ApiProperty()
+  readonly image?: string;
 }

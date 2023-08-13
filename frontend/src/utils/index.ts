@@ -1,1 +1,1 @@
-export * from '@src/utils/axios';
+export * from './axios';

@@ -1,1 +1,1 @@
-export * from '@src/store/reducer/product';
+export * from './product';

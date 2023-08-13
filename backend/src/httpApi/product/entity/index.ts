@@ -20,6 +20,9 @@ export class ProductEntity {
   @Column({ type: 'integer' })
   quantity: number;
 
+  @Column({ type: 'text' })
+  image: string;
+
   @CreateDateColumn({ type: 'date' })
   createdAt: Date;
 
