@@ -1,6 +1,6 @@
-import { ProductDto } from '@src/store/dto';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { ProductDto } from '@src/store/dto';
 
 interface SingleProductProps {
   product: ProductDto;

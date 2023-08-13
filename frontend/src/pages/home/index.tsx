@@ -1,3 +1,3 @@
-import { ProductListing } from '@src/pages/home/productListing';
+import { ProductListing } from './productListing';
 
 export const Home = () => <ProductListing />;
