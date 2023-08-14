@@ -1,7 +1,7 @@
 import { Layout, Navbar, Footer } from '@src/components';
 import { Home } from '@src/pages';
 
-const App = () => {
+export const App = () => {
   return (
     <Layout>
       <Navbar />
@@ -10,5 +10,3 @@ const App = () => {
     </Layout>
   );
 };
-
-export default App;
