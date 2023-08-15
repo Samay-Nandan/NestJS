@@ -2,9 +2,15 @@ import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ROUTES } from '@src/constant';
 import { Loader } from '@src/components';
-import { Home } from '@src/pages';
+import { Home, ProductDetails } from '@src/pages';
 
-export const routeConfigs = [{ path: ROUTES.HOME, element: <Home /> }];
+export const routeConfigs = [
+  { path: ROUTES.HOME, element: <Home /> },
+  {
+    path: ROUTES.PRODUCT_DETAILS,
+    element: <ProductDetails />,
+  },
+];
 
 export const AppRoutes = () => (
   <Suspense fallback={<Loader />}>
