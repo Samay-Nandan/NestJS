@@ -1,11 +1,11 @@
 import { Layout, Navbar, Footer } from '@src/components';
-import { Home } from '@src/pages';
+import { AppRoutes } from '@src/routes';
 
 export const App = () => {
   return (
     <Layout>
       <Navbar />
-      <Home />
+      <AppRoutes />
       <Footer />
     </Layout>
   );
