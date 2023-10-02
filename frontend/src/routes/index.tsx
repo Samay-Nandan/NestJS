@@ -2,13 +2,13 @@ import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ROUTES } from '@src/constant';
 import { Loader } from '@src/components';
-import { Home, ProductDetails } from '@src/pages';
+import { Home, ProductInfo } from '@src/pages';
 
 export const routeConfigs = [
   { path: ROUTES.HOME, element: <Home /> },
   {
     path: ROUTES.PRODUCT_DETAILS,
-    element: <ProductDetails />,
+    element: <ProductInfo />,
   },
 ];
 

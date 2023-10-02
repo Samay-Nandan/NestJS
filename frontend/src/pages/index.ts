@@ -1,7 +1,7 @@
 import { lazily } from '@src/utils';
 
 export const Home = lazily(import('@src/pages/home'), 'Home');
-export const ProductDetails = lazily(
+export const ProductInfo = lazily(
   import('@src/pages/productInfo'),
-  'ProductDetails'
+  'ProductInfo'
 );
