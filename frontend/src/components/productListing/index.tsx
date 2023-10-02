@@ -8,7 +8,7 @@ interface ProductListingProps {
 }
 
 export const ProductListing: FC<ProductListingProps> = ({ product }) => (
-  <Link to={ROUTES.PRODUCT_DETAILS.replace(':id', product.id)}>
+  <Link to={ROUTES.PRODUCT_INFO.replace(':id', product.id)}>
     <div className="bg-white p-4 rounded-md shadow-md flex flex-col justify-center items-center h-full">
       <div className="text-center">
         <img

@@ -7,7 +7,7 @@ import { Home, ProductInfo } from '@src/pages';
 export const routeConfigs = [
   { path: ROUTES.HOME, element: <Home /> },
   {
-    path: ROUTES.PRODUCT_DETAILS,
+    path: ROUTES.PRODUCT_INFO,
     element: <ProductInfo />,
   },
 ];
