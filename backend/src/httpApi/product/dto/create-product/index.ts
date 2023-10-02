@@ -7,6 +7,11 @@ export class CreateProductDto {
   @ApiProperty()
   readonly name: string;
 
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty()
+  readonly description: string;
+
   @IsNumber()
   @IsNotEmpty()
   @ApiProperty()

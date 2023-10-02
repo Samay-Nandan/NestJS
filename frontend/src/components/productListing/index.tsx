@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { ProductDto } from '@src/store/dto';
 import { ROUTES } from '@src/constant';
 
-interface SingleProductProps {
+interface ProductListingProps {
   product: ProductDto;
 }
 
-export const SingleProduct: FC<SingleProductProps> = ({ product }) => (
+export const ProductListing: FC<ProductListingProps> = ({ product }) => (
   <Link to={ROUTES.PRODUCT_DETAILS.replace(':id', product.id)}>
     <div className="bg-white p-4 rounded-md shadow-md flex flex-col justify-center items-center h-full">
       <div className="text-center">

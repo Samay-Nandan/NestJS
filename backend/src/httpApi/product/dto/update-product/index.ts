@@ -14,6 +14,12 @@ export class UpdateProductDto {
   readonly name?: string;
 
   @ValidateIf((object, value) => value !== undefined)
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty({ required: false })
+  readonly description?: string;
+
+  @ValidateIf((object, value) => value !== undefined)
   @IsNumber()
   @IsNotEmpty()
   @ApiProperty({ required: false })

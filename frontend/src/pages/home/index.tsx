@@ -1,3 +1,3 @@
-import { ProductListing } from './productListing';
+import { ProductList } from './productList';
 
-export const Home = () => <ProductListing />;
+export const Home = () => <ProductList />;

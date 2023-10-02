@@ -12,13 +12,19 @@ export const FetchAllProduct = createAsyncThunk(FETCH_ALL_PRODUCTS, () => {
   return HttpRequest({ url: ProductURL, method: RequestMethod.GET });
 });
 
-export const FetchProductById = createAsyncThunk(FETCH_PRODUCT_BY_ID, (id) => {
-  return HttpRequest({ url: `${ProductURL}/${id}`, method: RequestMethod.GET });
-});
+export const FetchProductById = createAsyncThunk(
+  FETCH_PRODUCT_BY_ID,
+  (id: string) => {
+    return HttpRequest({
+      url: `${ProductURL}/${id}`,
+      method: RequestMethod.GET,
+    });
+  }
+);
 
 export const UpdateProductById = createAsyncThunk(
   UPDATE_PRODUCT_BY_ID,
-  (id, body) => {
+  (id: string, body) => {
     return HttpRequest({
       url: `${ProductURL}/${id}`,
       method: RequestMethod.PATCH,
@@ -29,7 +35,7 @@ export const UpdateProductById = createAsyncThunk(
 
 export const DeleteProductById = createAsyncThunk(
   DELETE_PRODUCT_BY_ID,
-  (id) => {
+  (id: string) => {
     return HttpRequest({
       url: `${ProductURL}/${id}`,
       method: RequestMethod.DELETE,
@@ -39,7 +45,7 @@ export const DeleteProductById = createAsyncThunk(
 
 export const CreateProductById = createAsyncThunk(
   CREATE_PRODUCT_BY_ID,
-  (id, body) => {
+  (id: string, body) => {
     return HttpRequest({
       url: `${ProductURL}/${id}`,
       method: RequestMethod.POST,

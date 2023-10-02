@@ -14,6 +14,9 @@ export class ProductEntity {
   @Column({ type: 'text' })
   name: string;
 
+  @Column({ type: 'text' })
+  description: string;
+
   @Column({ type: 'money' })
   price: number;
 
