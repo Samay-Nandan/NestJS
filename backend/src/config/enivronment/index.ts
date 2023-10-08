@@ -1,5 +1,5 @@
 import { config } from 'dotenv';
-config();
+config({ path: '.env' });
 
 export const {
   PORT,
@@ -7,5 +7,6 @@ export const {
   POSTGRES_USER,
   POSTGRES_PASSWORD,
   POSTGRES_DATABASE,
+  POSTGRES_HOST,
   JWT_SECRET,
 } = process.env;
