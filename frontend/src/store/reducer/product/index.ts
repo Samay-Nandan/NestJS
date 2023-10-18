@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { DefaultProductValue } from '@src/constant';
+import { DefaultProduct } from '@src/constant';
 import { FetchAllProduct, FetchProductById } from '@src/store/action';
 import { ProductDto } from '@src/store/dto';
 
@@ -13,7 +13,7 @@ interface ProductState {
 const initialState: ProductState = {
   loading: true,
   products: [],
-  product: DefaultProductValue,
+  product: DefaultProduct,
   error: '',
 };
 
@@ -35,7 +35,7 @@ const Product = createSlice({
         state.product =
           typeof payload !== 'string'
             ? (payload as ProductDto)
-            : DefaultProductValue;
+            : DefaultProduct;
       });
   },
 });

@@ -1,6 +1,6 @@
 import { ProductDto } from '@src/store/dto';
 
-export const DefaultProductValue: ProductDto = {
+export const DefaultProduct: ProductDto = {
   id: '',
   name: '',
   description: '',
