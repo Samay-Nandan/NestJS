@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { FetchProductById } from '@src/store/action';
 import { useAppDispatch, useAppSelector } from '@src/store';
 import { Loader } from '@src/components';
-import { ROUTES } from '@src/constant';
+import { Routes } from '@src/constant';
 
 export const SingleProduct = () => {
   const { id } = useParams();
@@ -18,7 +18,7 @@ export const SingleProduct = () => {
     dispatch(FetchProductById(id as string));
   }, [dispatch, id]);
 
-  if (error) toast.error(error, { toastId: error }) && navigate(ROUTES.HOME);
+  if (error) toast.error(error, { toastId: error }) && navigate(Routes.home);
 
   if (loading) return <Loader />;
 
