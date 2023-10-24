@@ -27,4 +27,5 @@ const bootstrap = async () => {
   await app.listen(PORT);
   logApplicationInfo();
 };
+
 bootstrap();

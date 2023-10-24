@@ -1,4 +1,4 @@
-import { Home, ProductInfo } from '@src/pages';
+import { Home, ProductInfo, Admin } from '@src/pages';
 import { Routes } from '@src/constant';
 
 export const ApplicationRoutes = [
@@ -6,5 +6,9 @@ export const ApplicationRoutes = [
   {
     path: Routes.productInfo,
     element: <ProductInfo />,
+  },
+  {
+    path: Routes.admin,
+    element: <Admin />,
   },
 ];

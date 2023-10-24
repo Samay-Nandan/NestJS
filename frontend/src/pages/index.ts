@@ -5,3 +5,4 @@ export const ProductInfo = lazily(
   import('@src/pages/productInfo'),
   'ProductInfo'
 );
+export const Admin = lazily(import('@src/pages/admin'), 'Admin');
