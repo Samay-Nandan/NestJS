@@ -5,6 +5,8 @@ import { FetchProductById } from '@src/store/action';
 import { useAppDispatch, useAppSelector } from '@src/store';
 import { Loader } from '@src/components';
 import { Routes } from '@src/constant';
+import { getAdminCookie } from '@src/utils';
+import { AddToBasket, EditProduct } from '@src/helpers';
 
 export const SingleProduct = () => {
   const { id } = useParams();
@@ -36,9 +38,20 @@ export const SingleProduct = () => {
       <div className="md:order-1">
         <h1 className="text-3xl font-bold mb-2">{name}</h1>
         <p className="text-gray-700 text-lg mb-4">{description}</p>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 mb-4 mt-4">
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 mb-4 mt-4"
+          onClick={AddToBasket}
+        >
           Add to Basket
         </button>
+        {getAdminCookie().token && (
+          <button
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 mb-4 mt-4 mx-4"
+            onClick={EditProduct}
+          >
+            Edit Product
+          </button>
+        )}
       </div>
     </div>
   );

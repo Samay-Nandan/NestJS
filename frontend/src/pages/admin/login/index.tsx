@@ -2,12 +2,12 @@ import { FC, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Cookies from 'js-cookie';
 import { useAppDispatch, useAppSelector } from '@src/store';
 import { FormInput } from '@src/components';
 import { Routes, ImageUrl } from '@src/constant';
 import { LoginValidation } from '@src/validation';
 import { loginUser } from '@src/store/action';
+import { getAdminCookie } from '@src/utils';
 
 interface LoginForm {
   email: string;
@@ -31,20 +31,15 @@ export const Login: FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginForm>();
-  const { error, user } = useAppSelector(({ UserReducer }) => UserReducer);
+  const { error, admin } = useAppSelector(({ AdminReducer }) => AdminReducer);
 
   const loginHandler = (data: LoginForm) => dispatch(loginUser(data));
 
   if (error) toast.error(error, { toastId: error });
 
   useEffect(() => {
-    const userToken = Cookies.get('user');
-    if (userToken && JSON.parse(userToken).token) navigate(Routes.home);
-  }, [navigate]);
-
-  useEffect(() => {
-    if (user && user.token) Cookies.set('user', JSON.stringify(user));
-  }, [user]);
+    getAdminCookie().token && navigate(Routes.home);
+  }, [navigate, admin]);
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
