@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { toast } from 'react-toastify';
 import { FetchAllProduct } from '@src/store/action';
 import { useAppDispatch, useAppSelector } from '@src/store';
 import { Loader, ProductListing } from '@src/components';
@@ -7,15 +6,13 @@ import { ProductDto } from '@src/store/dto';
 
 export const ProductList = () => {
   const dispatch = useAppDispatch();
-  const { loading, error, products } = useAppSelector(
+  const { loading, products } = useAppSelector(
     ({ ProductReducer }) => ProductReducer
   );
 
   useEffect(() => {
     dispatch(FetchAllProduct());
   }, [dispatch]);
-
-  if (error) toast.error(error, { toastId: error });
 
   if (loading) return <Loader />;
 

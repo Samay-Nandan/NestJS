@@ -31,14 +31,13 @@ export const Login: FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginForm>();
-  const { error, admin } = useAppSelector(({ AdminReducer }) => AdminReducer);
+  const { token } = getAdminCookie();
+  const { admin } = useAppSelector(({ AdminReducer }) => AdminReducer);
 
   const loginHandler = (data: LoginForm) => dispatch(loginUser(data));
 
-  if (error) toast.error(error, { toastId: error });
-
   useEffect(() => {
-    getAdminCookie().token && navigate(Routes.home);
+    token && navigate(Routes.home);
   }, [navigate, admin]);
 
   return (

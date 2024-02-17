@@ -1,11 +1,27 @@
 import JsCookies from 'js-cookie';
+import { adminCookie, userCookie } from '@src/constant';
 
-export const getAdminCookie = () => JSON.parse(JsCookies.get('admin') ?? '{}');
+type CookiePayload = Record<string, unknown>;
 
-export const setAdminCookie = (payload: string) =>
-  JsCookies.set('admin', payload);
+const JsCookiesConfig = { path: '/' };
 
-export const getUserCookie = () => JSON.parse(JsCookies.get('user') ?? '{}');
+const getCookie = (name: string) => JSON.parse(JsCookies.get(name) ?? '{}');
 
-export const setUserCookie = (payload: string) =>
-  JsCookies.set('user', payload);
+const setCookie = (name: string, payload: CookiePayload) =>
+  JsCookies.set(name, JSON.stringify(payload), JsCookiesConfig);
+
+const removeCookie = (name: string) => JsCookies.remove(name, JsCookiesConfig);
+
+export const getAdminCookie = () => getCookie(adminCookie);
+
+export const setAdminCookie = (payload: CookiePayload) =>
+  setCookie(adminCookie, payload);
+
+export const removeAdminCookie = () => removeCookie(adminCookie);
+
+export const getUserCookie = () => getCookie(userCookie);
+
+export const setUserCookie = (payload: CookiePayload) =>
+  setCookie(userCookie, payload);
+
+export const removeUserCookie = () => removeCookie(userCookie);

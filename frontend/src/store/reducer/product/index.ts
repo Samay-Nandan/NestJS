@@ -1,7 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { DefaultProduct } from '@src/constant';
-import { FetchAllProduct, FetchProductById } from '@src/store/action';
+import {
+  FetchAllProduct,
+  FetchProductById,
+  UpdateProductById,
+} from '@src/store/action';
 import { ProductDto } from '@src/store/dto';
+import { removeAdminCookie } from '@src/utils';
 
 interface ProductState {
   loading: boolean;
@@ -36,6 +41,11 @@ const Product = createSlice({
           typeof payload !== 'string'
             ? (payload as ProductDto)
             : DefaultProduct;
+      })
+      .addCase(UpdateProductById.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.error = typeof payload === 'string' ? payload : '';
+        typeof payload === 'string' && removeAdminCookie();
       });
   },
 });

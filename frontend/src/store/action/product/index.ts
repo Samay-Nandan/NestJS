@@ -5,7 +5,6 @@ import {
   FETCH_PRODUCT_BY_ID,
   UPDATE_PRODUCT_BY_ID,
   DELETE_PRODUCT_BY_ID,
-  CREATE_PRODUCT_BY_ID,
 } from '@src/store/types';
 
 export const FetchAllProduct = createAsyncThunk(FETCH_ALL_PRODUCTS, () => {
@@ -24,7 +23,7 @@ export const FetchProductById = createAsyncThunk(
 
 export const UpdateProductById = createAsyncThunk(
   UPDATE_PRODUCT_BY_ID,
-  (id: string, body) => {
+  ({ id, body }: { id: string; body: unknown }) => {
     return HttpRequest({
       url: `${ProductURL}/${id}`,
       method: RequestMethod.PATCH,
@@ -39,17 +38,6 @@ export const DeleteProductById = createAsyncThunk(
     return HttpRequest({
       url: `${ProductURL}/${id}`,
       method: RequestMethod.DELETE,
-    });
-  }
-);
-
-export const CreateProductById = createAsyncThunk(
-  CREATE_PRODUCT_BY_ID,
-  (id: string, body) => {
-    return HttpRequest({
-      url: `${ProductURL}/${id}`,
-      method: RequestMethod.POST,
-      body,
     });
   }
 );

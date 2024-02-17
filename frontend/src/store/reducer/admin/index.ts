@@ -7,13 +7,11 @@ import { setAdminCookie } from '@src/utils';
 interface AdminState {
   loading: boolean;
   admin: AdminDto;
-  error: string;
 }
 
 const initialState: AdminState = {
   loading: true,
   admin: DefaultAdmin,
-  error: '',
 };
 
 const Admin = createSlice({
@@ -23,10 +21,9 @@ const Admin = createSlice({
   extraReducers: (builder) => {
     builder.addCase(loginUser.fulfilled, (state, { payload }) => {
       state.loading = false;
-      state.error = typeof payload === 'string' ? payload : '';
       state.admin =
         typeof payload !== 'string' ? (payload as AdminDto) : DefaultAdmin;
-      setAdminCookie(JSON.stringify(state.admin));
+      setAdminCookie(state.admin);
     });
   },
 });
