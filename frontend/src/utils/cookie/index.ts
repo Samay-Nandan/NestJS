@@ -1,5 +1,7 @@
 import JsCookies from 'js-cookie';
-import { adminCookie, userCookie } from '@src/constant';
+import { Cookies } from '@src/constant';
+
+const { admin, user } = Cookies;
 
 type CookiePayload = Record<string, unknown>;
 
@@ -12,16 +14,16 @@ const setCookie = (name: string, payload: CookiePayload) =>
 
 const removeCookie = (name: string) => JsCookies.remove(name, JsCookiesConfig);
 
-export const getAdminCookie = () => getCookie(adminCookie);
+export const getAdminCookie = () => getCookie(admin);
 
 export const setAdminCookie = (payload: CookiePayload) =>
-  setCookie(adminCookie, payload);
+  setCookie(admin, payload);
 
-export const removeAdminCookie = () => removeCookie(adminCookie);
+export const removeAdminCookie = () => removeCookie(admin);
 
-export const getUserCookie = () => getCookie(userCookie);
+export const getUserCookie = () => getCookie(user);
 
 export const setUserCookie = (payload: CookiePayload) =>
-  setCookie(userCookie, payload);
+  setCookie(user, payload);
 
-export const removeUserCookie = () => removeCookie(userCookie);
+export const removeUserCookie = () => removeCookie(user);

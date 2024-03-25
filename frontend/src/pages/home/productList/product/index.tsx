@@ -7,7 +7,7 @@ interface ProductListingProps {
   product: ProductDto;
 }
 
-export const ProductListing: FC<ProductListingProps> = ({ product }) => (
+export const Product: FC<ProductListingProps> = ({ product }) => (
   <Link to={Routes.productInfo.replace(':id', product.id)}>
     <div className="bg-white p-4 rounded-md shadow-md flex flex-col justify-center items-center h-full">
       <div className="text-center">

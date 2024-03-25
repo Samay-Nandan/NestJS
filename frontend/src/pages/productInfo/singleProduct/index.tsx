@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '@src/store';
 import { Loader } from '@src/components';
 import { Routes } from '@src/constant';
 import { getAdminCookie } from '@src/utils';
-import { AddToBasket } from '@src/helpers';
+import { AddToBasket } from '@src/pages/productInfo/helper';
 import { UpdateProduct } from '@src/pages/productInfo/updateProduct';
 
 export const SingleProduct = () => {

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { DefaultProduct } from '@src/constant';
+import { DefaultProduct } from '@src/store/constant';
 import {
   FetchAllProduct,
   FetchProductById,

@@ -1,13 +1,12 @@
 import { FC, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from '@src/store';
-import { FormInput } from '@src/components';
 import { Routes, ImageUrl } from '@src/constant';
-import { LoginValidation } from '@src/validation';
+import { LoginValidation } from '@src/pages/admin/login/validation';
 import { loginUser } from '@src/store/action';
 import { getAdminCookie } from '@src/utils';
+import { FormInput } from './form';
 
 interface LoginForm {
   email: string;

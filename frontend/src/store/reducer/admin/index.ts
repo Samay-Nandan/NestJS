@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { loginUser } from '@src/store/action';
 import { AdminDto } from '@src/store/dto';
-import { DefaultAdmin } from '@src/constant';
+import { DefaultAdmin } from '@src/store/constant';
 import { setAdminCookie } from '@src/utils';
 
 interface AdminState {

@@ -1,2 +1,4 @@
-export const adminCookie = 'admin';
-export const userCookie = 'user';
+export const Cookies = {
+  admin: 'admin',
+  user: 'user',
+};
