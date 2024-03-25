@@ -1,8 +1,8 @@
 import { Controller, Post, Body, HttpStatus } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Public } from '@src/middleware';
-import { UserService } from '@src/httpApi/services';
-import { LoginDto, RegisterDto } from '@src/httpApi/dtos';
+import { UserService } from '@user/service';
+import { LoginDto, RegisterDto } from '@user/dto';
 
 @ApiTags('User')
 @Controller('user')

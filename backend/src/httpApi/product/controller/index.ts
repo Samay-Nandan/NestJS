@@ -11,12 +11,12 @@ import {
 } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Public } from '@src/middleware';
-import { ProductService } from '@src/httpApi/services';
+import { ProductService } from '@product/service';
 import {
   CreateProductDto,
   PaginationProductDto,
   UpdateProductDto,
-} from '@src/httpApi/dtos';
+} from '@product/dto';
 
 @ApiTags('Product')
 @Controller('product')

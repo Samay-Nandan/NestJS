@@ -18,7 +18,9 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@src/*": ["src/*"]
+      "@src/*": ["src/*"],
+      "@product/*": ["src/httpApi/product/*"],
+      "@user/*": ["src/httpApi/user/*"]
     },
     "noUnusedLocals": true
   }

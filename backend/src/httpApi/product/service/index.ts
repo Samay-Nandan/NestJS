@@ -5,8 +5,8 @@ import {
   CreateProductDto,
   PaginationProductDto,
   UpdateProductDto,
-} from '@src/httpApi/dtos';
-import { ProductEntity } from '@src/httpApi/entities';
+} from '@product/dto';
+import { ProductEntity } from '@product/entity';
 
 @Injectable()
 export class ProductService {
