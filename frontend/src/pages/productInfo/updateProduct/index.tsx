@@ -2,14 +2,14 @@ import { toast } from 'react-toastify';
 import { FC, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '@src/store';
-import { UpdateProductById } from '@src/store/action';
+import { UpdateProductById } from '@store/action';
 import { convertNumericStringsInObject } from '@src/utils';
 import { PRODUCT_UPDATED_SUCCESSFULLY } from '@src/constant';
 import {
   UpdateProductProps,
   ProductFormData,
   ProductFormInputProps,
-} from '@src/pages/productInfo/dto';
+} from '@productInfo/dto';
 
 const formFields = [
   { name: 'name', label: 'Name', type: 'text' },

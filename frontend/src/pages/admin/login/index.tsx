@@ -3,11 +3,11 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@src/store';
 import { Routes, ImageUrl } from '@src/constant';
-import { LoginValidation } from '@src/pages/admin/validation';
-import { loginUser } from '@src/store/action';
+import { LoginValidation } from '@admin/validation';
+import { loginUser } from '@store/action';
 import { getAdminCookie } from '@src/utils';
-import { FormInput } from '@src/pages/admin/form';
-import { LoginForm } from "@src/pages/admin/dto"
+import { FormInput } from '@admin/form';
+import { LoginForm } from '@admin/dto';
 
 const styles = {
   label: 'block text-sm font-medium leading-6 text-gray-900 my-1.5',

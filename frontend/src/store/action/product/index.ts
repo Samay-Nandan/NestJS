@@ -5,7 +5,7 @@ import {
   FETCH_PRODUCT_BY_ID,
   UPDATE_PRODUCT_BY_ID,
   DELETE_PRODUCT_BY_ID,
-} from '@src/store/types';
+} from '@store/types';
 import { Endpoint } from '@src/constant';
 
 export const FetchAllProduct = createAsyncThunk(FETCH_ALL_PRODUCTS, () => {

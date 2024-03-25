@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { FetchAllProduct } from '@src/store/action';
+import { FetchAllProduct } from '@store/action';
 import { useAppDispatch, useAppSelector } from '@src/store';
 import { Loader } from '@src/components';
-import { ProductDto } from '@src/store/dto';
-import { Product } from '@src/pages/home/product';
+import { ProductDto } from '@store/dto';
+import { Product } from '@home/product';
 
 export const ProductList = () => {
   const dispatch = useAppDispatch();

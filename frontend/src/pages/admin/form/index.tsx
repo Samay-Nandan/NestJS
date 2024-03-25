@@ -1,5 +1,5 @@
 import { forwardRef, memo } from 'react';
-import { InputProps } from '@src/pages/admin/dto';
+import { InputProps } from '@admin/dto';
 
 export const FormInput = memo(
   forwardRef<HTMLInputElement, InputProps>(

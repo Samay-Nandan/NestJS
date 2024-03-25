@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { DefaultProduct } from '@src/store/constant';
+import { DefaultProduct } from '@store/constant';
 import {
   FetchAllProduct,
   FetchProductById,
   UpdateProductById,
-} from '@src/store/action';
-import { ProductDto, ProductState } from '@src/store/dto';
+} from '@store/action';
+import { ProductDto, ProductState } from '@store/dto';
 import { removeAdminCookie } from '@src/utils';
 
 const initialState: ProductState = {

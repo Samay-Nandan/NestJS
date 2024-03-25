@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { FetchProductById } from '@src/store/action';
+import { FetchProductById } from '@store/action';
 import { useAppDispatch, useAppSelector } from '@src/store';
 import { Loader } from '@src/components';
 import { Routes } from '@src/constant';
 import { getAdminCookie } from '@src/utils';
-import { AddToBasket } from '@src/pages/productInfo/helper';
-import { UpdateProduct } from '@src/pages/productInfo/updateProduct';
+import { AddToBasket } from '@productInfo/helper';
+import { UpdateProduct } from '@productInfo/updateProduct';
 
 export const SingleProduct = () => {
   const { id } = useParams();

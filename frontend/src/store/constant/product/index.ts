@@ -1,4 +1,4 @@
-import { ProductDto } from '@src/store/dto';
+import { ProductDto } from '@store/dto';
 
 export const DefaultProduct: ProductDto = {
   id: '',

@@ -1,4 +1,4 @@
-import { AdminDto } from '@src/store/dto';
+import { AdminDto } from '@store/dto';
 
 export const DefaultAdmin: AdminDto = {
   token: '',
