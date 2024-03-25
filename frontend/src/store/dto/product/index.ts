@@ -5,3 +5,10 @@ export interface ProductDto {
   image: string;
   price: number;
 }
+
+export interface ProductState {
+  loading: boolean;
+  products: ProductDto[];
+  product: ProductDto;
+  error: string;
+}

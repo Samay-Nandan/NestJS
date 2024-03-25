@@ -5,15 +5,8 @@ import {
   FetchProductById,
   UpdateProductById,
 } from '@src/store/action';
-import { ProductDto } from '@src/store/dto';
+import { ProductDto, ProductState } from '@src/store/dto';
 import { removeAdminCookie } from '@src/utils';
-
-interface ProductState {
-  loading: boolean;
-  products: ProductDto[];
-  product: ProductDto;
-  error: string;
-}
 
 const initialState: ProductState = {
   loading: true,

@@ -1,16 +1,5 @@
 import { forwardRef, memo } from 'react';
-
-interface InputProps {
-  type: string;
-  name: string;
-  placeholder: string;
-  label: string;
-  inputStyles: string;
-  labelStyles: string;
-  errorStyles: string;
-  autoComplete: string;
-  error: string | undefined;
-}
+import { InputProps } from '@src/pages/admin/dto';
 
 export const FormInput = memo(
   forwardRef<HTMLInputElement, InputProps>(

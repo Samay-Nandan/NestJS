@@ -1,13 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { loginUser } from '@src/store/action';
-import { AdminDto } from '@src/store/dto';
+import { AdminDto, AdminState } from '@src/store/dto';
 import { DefaultAdmin } from '@src/store/constant';
 import { setAdminCookie } from '@src/utils';
-
-interface AdminState {
-  loading: boolean;
-  admin: AdminDto;
-}
 
 const initialState: AdminState = {
   loading: true,

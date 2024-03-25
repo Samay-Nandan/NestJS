@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 import { IRequest, RequestMethod, getAdminCookie } from '@src/utils';
-import { VITE_BACKEND_URL } from '@src/environment';
+import { VITE_BACKEND_URL } from '@src/constant';
 
 axios.defaults.baseURL = VITE_BACKEND_URL;
 

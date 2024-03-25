@@ -1,32 +1,15 @@
 import { toast } from 'react-toastify';
 import { FC, useEffect, useState } from 'react';
-import { UseFormRegister, FieldErrors, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '@src/store';
 import { UpdateProductById } from '@src/store/action';
 import { convertNumericStringsInObject } from '@src/utils';
 import { PRODUCT_UPDATED_SUCCESSFULLY } from '@src/constant';
-
-interface UpdateProductProps {
-  setUpdateProduct: (value: boolean) => void;
-}
-
-interface ProductFormData {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  quantity: number;
-  image: string;
-}
-
-interface ProductFormInputProps {
-  register: UseFormRegister<ProductFormData>;
-  name: string;
-  label: string;
-  type: string;
-  errors: FieldErrors;
-  step?: number;
-}
+import {
+  UpdateProductProps,
+  ProductFormData,
+  ProductFormInputProps,
+} from '@src/pages/productInfo/dto';
 
 const formFields = [
   { name: 'name', label: 'Name', type: 'text' },

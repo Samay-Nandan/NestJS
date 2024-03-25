@@ -3,7 +3,7 @@ import { FetchAllProduct } from '@src/store/action';
 import { useAppDispatch, useAppSelector } from '@src/store';
 import { Loader } from '@src/components';
 import { ProductDto } from '@src/store/dto';
-import { Product } from './product';
+import { Product } from '@src/pages/home/product';
 
 export const ProductList = () => {
   const dispatch = useAppDispatch();

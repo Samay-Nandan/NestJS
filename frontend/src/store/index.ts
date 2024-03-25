@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { VITE_NODE_ENV } from '@src/environment';
+import { VITE_NODE_ENV } from '@src/constant';
 import { ProductReducer, AdminReducer } from '@src/store/reducer';
 
 const reducer = combineReducers({ ProductReducer, AdminReducer });

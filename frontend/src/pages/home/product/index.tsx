@@ -1,11 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { ProductDto } from '@src/store/dto';
 import { Routes } from '@src/constant';
-
-interface ProductListingProps {
-  product: ProductDto;
-}
+import { ProductListingProps } from '@src/pages/home/dto';
 
 export const Product: FC<ProductListingProps> = ({ product }) => (
   <Link to={Routes.productInfo.replace(':id', product.id)}>
